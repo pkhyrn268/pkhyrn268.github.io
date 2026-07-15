@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박혜린 · Infra & DevOps Engineer</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo" data-gohome>pkhyrn268<span class="acc blink">_</span></a>
+      <div class="nav-links">
+        <a href="#projects" data-gohome>Projects</a>
+        <a href="#skills" data-gohome>Skills</a>
+        <a href="#experience" data-gohome>Experience</a>
+        <a href="#contact" data-gohome>Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Detail view ===== -->
+  <section id="detail-view" class="detail-view" hidden>
+    <div class="detail-inner">
+      <button class="back-btn" data-gohome>← cd ../projects</button>
+
+      <p class="mono acc small" id="d-num">01 / case study</p>
+      <h1 id="d-name">Project name</h1>
+      <span class="status-badge mono" id="d-status-badge" hidden></span>
+      <p class="d-oneliner" id="d-oneliner">One liner</p>
+
+      <div class="d-meta">
+        <span id="d-period">period</span>
+        <span class="dot">·</span>
+        <span id="d-role">role</span>
+        <span class="dot" id="d-repo-dot">·</span>
+        <a id="d-repo" href="#" target="_blank" rel="noopener" class="acc"></a>
+      </div>
+
+      <h2 class="section-h">## 문제 · 배경</h2>
+      <p class="d-problem" id="d-problem">problem</p>
+
+      <div id="d-design-intent-wrap" hidden>
+        <h2 class="section-h">## 설계 의도</h2>
+        <p class="d-problem" id="d-design-intent"></p>
+      </div>
+
+      <div id="d-architecture-wrap" hidden>
+        <h2 class="section-h">## 구성도</h2>
+        <div class="d-diagram-slot">
+          <img id="d-architecture-img" class="d-diagram-img" hidden>
+          <p class="d-diagram-caption" id="d-architecture-real-caption" hidden></p>
+          <div class="d-diagram-slot-body" id="d-architecture-placeholder">
+            <span class="d-diagram-slot-icon">🖼</span>
+            <p class="d-diagram-slot-text" id="d-architecture-caption"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="d-features-wrap" hidden>
+        <h2 class="section-h">## 주요 기능</h2>
+        <div class="d-list" id="d-features"></div>
+      </div>
+
+      <h2 class="section-h">## 설계 · 구현</h2>
+      <div class="d-list" id="d-bullets"></div>
+
+      <div id="d-troubleshooting-wrap" hidden>
+        <h2 class="section-h">## 트러블슈팅</h2>
+        <div class="d-trouble-list" id="d-troubleshooting"></div>
+      </div>
+
+      <h2 class="section-h">## 결과</h2>
+      <div class="d-results" id="d-results"></div>
+
+      <div id="d-result-images-wrap" hidden>
+        <h2 class="section-h">## 결과 자료 (표 · 그래프 · 스크린샷)</h2>
+        <div class="d-diagram-grid" id="d-result-images"></div>
+      </div>
+
+      <h2 class="section-h">## Stack</h2>
+      <div class="chip-row" id="d-stack"></div>
+
+      <div class="d-actions" id="d-code-links"></div>
+      <div class="d-actions">
+        <a id="d-github" href="#" target="_blank" rel="noopener" class="btn btn-outline">GitHub에서 코드 보기 ↗</a>
+        <button class="btn btn-ghost" data-gohome>목록으로</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== List view ===== -->
+  <div id="list-view">
+
+    <!-- Hero -->
+    <header id="top" class="hero">
+      <p class="mono acc small">$ whoami</p>
+      <h1 class="hero-name">박혜린 <span class="hero-name-en mono">Hyerin Park</span></h1>
+      <p class="hero-tagline">AI 시스템을 <span class="acc">인프라부터 모델까지</span> end-to-end로 다룹니다.</p>
+      <p class="hero-desc">AI 모델을 개발하고, 이를 실제 환경에서 안정적으로 운영하기 위한 시스템에 관심이 많습니다. 현재 동국대학교 AI 연구실 서버 관리자로 80대 이상 GPU, 15대 서버 인프라를 다루며 강화학습 기반 모델을 개발하고 있고, 영상 분석(Vision AI) 프로젝트 경험도 있습니다.</p>
+      <p class="hero-desc-en mono">I develop AI models and I'm interested in the systems that run them reliably in production. Currently a server administrator at Dongguk University AI Lab, working on reinforcement learning models with prior experience in vision AI.</p>
+      <p class="mono muted small">// 프로젝트 내용은 계속 업데이트 중입니다</p>
+      <div class="hero-actions">
+        <a href="https://github.com/pkhyrn268" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          github.com/pkhyrn268</a>
+        <a href="mailto:tokdoro1@naver.com" class="btn btn-outline">tokdoro1@naver.com</a>
+        <a href="#projects" class="btn btn-text">프로젝트 보기 ↓</a>
+      </div>
+    </header>
+
+    <!-- Featured Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-h">## Featured Projects</h2>
+      <p class="section-sub">카드를 누르면 문제 → 설계 → 결과의 케이스 스터디를 볼 수 있습니다</p>
+      <div class="featured-grid" id="featured-grid"></div>
+    </section>
+
+    <!-- Other Projects -->
+    <section class="section">
+      <h2 class="section-h muted">## Other Projects</h2>
+      <div id="other-list"></div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2 class="section-h">## Skills</h2>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section-h">## Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-h">## Education</h2>
+      <div class="edu-row">
+        <span class="mono muted small">2023.03 —</span>
+        <span>
+          <span class="edu-title">동국대학교 컴퓨터공학전공 (AI 소프트웨어 융합)</span>
+          <span class="edu-sub">4학년 재학</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-contact">
+      <h2 class="section-h">## Contact</h2>
+      <p class="contact-desc">GPU 인프라, AI 시스템, 백엔드에 대한 이야기는 언제든 환영합니다. 코드는 GitHub에서 확인하실 수 있습니다.</p>
+      <div class="contact-actions">
+        <a href="mailto:tokdoro1@naver.com" class="btn btn-accent-outline mono">→ tokdoro1@naver.com</a>
+        <a href="https://github.com/pkhyrn268" target="_blank" rel="noopener" class="btn btn-outline mono">→ github.com/pkhyrn268</a>
+      </div>
+      <p class="footer-note mono">© 2026 Hyerin Park</p>
+    </section>
+
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
