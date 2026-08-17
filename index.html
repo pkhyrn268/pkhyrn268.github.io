@@ -44,6 +44,13 @@
         <a id="d-repo" href="#" target="_blank" rel="noopener" class="acc"></a>
       </div>
 
+      <div id="d-summary-wrap" hidden>
+        <h2 class="section-h">## 한눈에 보기</h2>
+        <p class="d-summary-intro" id="d-summary-intro" hidden></p>
+        <div class="d-summary-grid" id="d-summary-grid" hidden></div>
+        <div class="d-summary-points" id="d-summary-points" hidden></div>
+      </div>
+
       <h2 class="section-h">## 문제 · 배경</h2>
       <p class="d-problem" id="d-problem">problem</p>
 
@@ -69,11 +76,11 @@
         <div class="d-list" id="d-features"></div>
       </div>
 
-      <h2 class="section-h">## 설계 · 구현</h2>
+      <h2 class="section-h">## 주요 설계 판단 · 구현</h2>
       <div class="d-list" id="d-bullets"></div>
 
       <div id="d-troubleshooting-wrap" hidden>
-        <h2 class="section-h">## 트러블슈팅</h2>
+        <h2 class="section-h">## 대표 트러블슈팅</h2>
         <div class="d-trouble-list" id="d-troubleshooting"></div>
       </div>
 
@@ -103,10 +110,10 @@
     <header id="top" class="hero">
       <p class="mono acc small">$ whoami</p>
       <h1 class="hero-name">박혜린 <span class="hero-name-en mono">Hyerin Park</span></h1>
-      <p class="hero-tagline">AI 시스템을 <span class="acc">인프라부터 모델까지</span> end-to-end로 다룹니다.</p>
-      <p class="hero-desc">AI 모델을 개발하고, 이를 실제 환경에서 안정적으로 운영하기 위한 시스템에 관심이 많습니다. 현재 동국대학교 AI 연구실 서버 관리자로 80대 이상 GPU, 15대 서버 인프라를 운영하며 GPU 런타임 표준화, Kerberos/NFS 스토리지, 원격 부팅, 모니터링·복구 자동화를 맡고 있습니다. 동시에 강화학습 기반 모델과 영상 분석(Vision AI) 프로젝트도 진행하고 있습니다.</p>
-      <p class="hero-desc-en mono">I build AI models and the systems that keep them reliable in production. Currently I operate an 80+ GPU, 15-server AI lab as a server administrator, covering GPU runtime standardization, Kerberos/NFS storage, remote boot, monitoring, and automated recovery.</p>
-      <p class="mono muted small">// 프로젝트 내용은 계속 업데이트 중입니다</p>
+      <p class="hero-tagline">수작업으로 막히는 AI 인프라를 <span class="acc">운영 가능한 시스템</span>으로 바꿉니다.</p>
+      <p class="hero-desc">80+ GPU, 15대 서버 환경에서 계정 발급, NodePort 접속, Kerberos/NFS 스토리지, 원격 부팅, 모니터링·복구 자동화를 설계하고 운영합니다. 이 포트폴리오는 무엇을 만들었는지보다 어떤 운영 병목을 없앴고, 어떤 장애를 어떤 설계 판단으로 다뤘는지를 빠르게 읽을 수 있도록 정리했습니다.</p>
+      <p class="hero-desc-en mono">I turn failure-prone AI infrastructure workflows into repeatable operational systems. My recent work focuses on account provisioning, storage, access paths, monitoring, and recovery automation for an 80+ GPU, 15-server lab.</p>
+      <p class="mono muted small">// 각 프로젝트는 한눈에 요약 → 설계 판단 → 대표 트러블슈팅 → 결과 순서로 읽을 수 있습니다</p>
       <div class="hero-actions">
         <a href="https://github.com/pkhyrn268" target="_blank" rel="noopener" class="btn btn-outline">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -119,7 +126,7 @@
     <!-- Featured Projects -->
     <section id="projects" class="section">
       <h2 class="section-h">## Featured Projects</h2>
-      <p class="section-sub">카드를 누르면 문제 → 설계 → 결과의 케이스 스터디를 볼 수 있습니다</p>
+      <p class="section-sub">카드를 누르면 한눈에 요약 → 설계 판단 → 대표 트러블슈팅 → 결과 순으로, 채용 담당자가 빠르게 스캔하기 좋은 케이스 스터디를 볼 수 있습니다</p>
       <div class="featured-grid" id="featured-grid"></div>
     </section>
 
