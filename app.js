@@ -51,6 +51,7 @@ function renderFeatured() {
     card.appendChild(el('h3', 'fc-name', p.name));
     if (p.statusLabel) card.appendChild(el('span', 'status-badge mono', p.statusLabel));
     card.appendChild(el('p', 'fc-desc', p.desc));
+    if (p.listSignal) card.appendChild(el('p', 'fc-signal', p.listSignal));
 
     const chips = el('div', 'chip-row');
     renderChips(chips, p.stack, 'chip');
@@ -130,6 +131,41 @@ function showDetail(id) {
   const repoLink = document.getElementById('d-repo');
   repoLink.textContent = `${p.repo} ↗`;
   repoLink.href = p.url;
+
+  const summaryWrap = document.getElementById('d-summary-wrap');
+  const hasSummary = p.summaryIntro || (p.summaryCards && p.summaryCards.length) || (p.summaryBullets && p.summaryBullets.length);
+  summaryWrap.hidden = !hasSummary;
+  if (hasSummary) {
+    const summaryIntro = document.getElementById('d-summary-intro');
+    summaryIntro.textContent = p.summaryIntro || '';
+    summaryIntro.hidden = !p.summaryIntro;
+
+    const summaryGrid = document.getElementById('d-summary-grid');
+    summaryGrid.innerHTML = '';
+    if (p.summaryCards) {
+      p.summaryCards.forEach(card => {
+        const node = el('div', 'd-summary-card');
+        node.appendChild(el('span', 'd-summary-label mono', card.label));
+        node.appendChild(el('strong', 'd-summary-value', card.value));
+        if (card.note) node.appendChild(el('span', 'd-summary-note', card.note));
+        summaryGrid.appendChild(node);
+      });
+    }
+    summaryGrid.hidden = !(p.summaryCards && p.summaryCards.length);
+
+    const summaryPointsWrap = document.getElementById('d-summary-points');
+    summaryPointsWrap.innerHTML = '';
+    if (p.summaryBullets) {
+      p.summaryBullets.forEach(point => {
+        const row = el('div', 'd-summary-point');
+        row.appendChild(el('span', 'bullet mono', '▸'));
+        row.appendChild(el('span', 'text', point));
+        summaryPointsWrap.appendChild(row);
+      });
+    }
+    summaryPointsWrap.hidden = !(p.summaryBullets && p.summaryBullets.length);
+  }
+
   document.getElementById('d-problem').textContent = p.problem;
 
   // 설계 의도 (optional — only shown when a project defines it)
